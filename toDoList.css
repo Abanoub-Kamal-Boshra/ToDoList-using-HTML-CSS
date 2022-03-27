@@ -1,0 +1,35 @@
+#_totalToDoList{
+    position: relative;
+    margin: 4em auto;
+    padding: 0 2em 2em 2em;
+    width: 25em;
+    border: 0.2em solid black;
+}
+#_header{
+    position: relative;
+    text-align: center;
+}
+#_toDoInput{
+    width: 90%;
+}
+._myToDoItemCom{
+    position: absolute;
+    right: 3.5em;
+    width: 1.7em;
+    height: 1.8em;
+    margin: 0em;
+}
+._myToDoItemDel{
+    position: absolute;
+    right: 1em;
+}
+#_wantedList, #_completedList{
+    margin-right: 3em;
+}
+h2{
+    position: relative;
+    text-align: center;
+}
+li{
+    padding: 0.7em 0;
+}

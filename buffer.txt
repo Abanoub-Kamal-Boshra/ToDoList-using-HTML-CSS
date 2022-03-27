@@ -1,0 +1,144 @@
+
+// let elementLi = document.createElement("li");
+    // myTextList.appendChild(elementLi);
+
+    // let elementSpan = document.createElement("span");
+    // elementSpan.textContent = myToDoInput.value + "     " ;
+
+    // let buttonElement = document.createElement("button");
+    // buttonElement.textContent = "X" ;
+
+    // elementLi.appendChild(elementSpan);
+    // elementLi.appendChild(buttonElement);
+
+
+    id="+newToDoList.key+"
+
+    value="+newToDoList.key+"
+
+    onclick='completeElement(this)'
+
+
+function completeElement(chickBox)
+{
+    if(chickBox.checked)
+    {
+        list.forEach(getMyIndex);
+        function getMyIndex(val, index, array)
+        {
+            if(array[index].key == chickBox.id)
+            {
+                elementIndix = index;
+            }
+        }
+
+        if(!list[elementIndix].statusFlag)
+        {
+            list[elementIndix].statusFlag = true;
+            completedList.push(list[elementIndix]);
+            comletedIndex++;
+        
+            list = list.filter(checkKey);
+            function checkKey(val)
+            {
+                return val.key != chickBox.id;
+            }
+            console.log(list);
+            console.log(completedList);
+    
+            myCompletedList.appendChild(chickBox.parentNode);
+        }
+    }
+    else
+    {
+        completedList.forEach(getMyIndex);
+        function getMyIndex(val, index, array)
+        {
+            if(array[index].key == chickBox.id)
+            {
+                elementIndix = index;
+            }
+        }
+        if(completedList[elementIndix].statusFlag)
+        {
+            completedList[elementIndix].statusFlag = false;
+            list.push(list[elementIndix]);
+            wantedIndex++;
+        
+            completedList = completedList.filter(checkKey);
+            function checkKey(val)
+            {
+                return val.key != chickBox.id;
+            }
+            console.log(list);
+            console.log(completedList);
+    
+            myWantedList.appendChild(chickBox.parentNode);
+        }
+    }
+}
+
+
+function completeElement(chickBox)
+{
+    if(!list[elementIndix].statusFlag)
+    {
+        // get the indix
+        list.forEach(getMyIndex);
+        function getMyIndex(val, index, array)
+        {
+            if(array[index].key == chickBox.id)
+            {
+                elementIndix = index;
+            }
+        }
+        // change the status of element
+        list[elementIndix].statusFlag = true;
+        // add the element to the completed list
+        completedList.push(list[elementIndix]);
+        comletedIndex++;
+        // delete the element from the wanted to do list
+        list = list.filter(checkKey);
+        function checkKey(val)
+        {
+            return val.key != chickBox.id;
+        }
+        // show the element in the completed list in the html list
+        myCompletedList.appendChild(chickBox.parentNode);
+        // for test
+        console.log(list);
+        console.log(completedList);
+    }
+    else if(list[elementIndix].statusFlag)
+    {
+        // get the indix
+        completedList.forEach(getMyIndex);
+        function getMyIndex(val, index, array)
+        {
+            if(array[index].key == chickBox.id)
+            {
+                elementIndix = index;
+            }
+        }
+        // change the status of element
+        completedList[elementIndix].statusFlag = false;
+        // add the element to the uncompleted list
+        list.push(completedList[elementIndix]);
+        wantedIndex++;
+        // delete the element from the completed list
+        completedList = completedList.filter(checkKey);
+        function checkKey(val)
+        {
+            return val.key != chickBox.id;
+        }
+        // show the element in the uncompleted list in the html list
+        myWantedList.appendChild(chickBox.parentNode);
+        // for test
+        console.log(list);
+        console.log(completedList);
+    }
+}
+
+     // for test
+        console.log(list);
+        console.log(completedList);
